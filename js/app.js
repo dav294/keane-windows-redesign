@@ -2,8 +2,6 @@
  * Keane Windows & Doors — App.js
  * Lenis smooth scroll + GSAP ScrollTrigger animations
  */
-import { initScene, updateScroll } from './scene.js';
-
 /* ── Lenis Smooth Scroll ──────────────────────────────────────── */
 const lenis = new Lenis({
   duration: 1.2,
@@ -21,13 +19,9 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 // Wire Lenis scroll to ScrollTrigger
-lenis.on('scroll', ({ scroll }) => {
+lenis.on('scroll', () => {
   ScrollTrigger.update();
-  updateScroll(scroll);
 });
-
-/* ── Init Three.js Scene ──────────────────────────────────────── */
-initScene();
 
 /* ── Navigation ───────────────────────────────────────────────── */
 const nav = document.getElementById('nav');
