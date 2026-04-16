@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keane Windows &amp; Doors | Dublin's Premier Window &amp; Door Specialists Since 1985</title>
+  <meta name="description" content="Family-run window and door specialists serving Dublin, Meath, Kildare &amp; Wicklow since 1985. A-rated uPVC windows, composite doors, and expert repair services.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─────────────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-k">KEANE</span>
+        <span class="logo-wd">WINDOWS &amp; DOORS</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#why">Why Keane</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact" class="nav-cta">Free Quote</a></li>
+      </ul>
+      <button class="burger" id="burger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileClose" aria-label="Close menu">✕</button>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#why">Why Keane</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Get a Quote</a></li>
+    </ul>
+    <div class="mobile-nav-foot">
+      <a href="tel:016203232">01 620 3232</a>
+      <a href="mailto:office@keanewindows.ie">office@keanewindows.ie</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ───────────────────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="eyebrow-rule"></div>
+        <span>Established Dublin, 1985</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="ht-line">Windows &amp; Doors</span>
+        <em class="ht-line ht-italic">Built to Last</em>
+        <span class="ht-line">Generations</span>
+      </h1>
+      <p class="hero-sub">
+        Dublin's most trusted family window &amp; door specialists,<br>
+        serving Dublin, Meath, Kildare &amp; Wicklow for over 40 years.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-gold">Get a Free Quote</a>
+        <a href="#products" class="btn btn-ghost">Our Products</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-stars">
+          <svg viewBox="0 0 16 16" fill="#c9a060"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="#c9a060"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="#c9a060"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="#c9a060"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="#c9a060"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6z"/></svg>
+        </div>
+        <span class="trust-text"><strong>4.7 / 5</strong> on Trustpilot &nbsp;·&nbsp; 31 verified reviews</span>
+      </div>
+    </div>
+    <div class="scroll-cue">
+      <div class="scroll-cue-bar"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ─── WHO WE ARE ─────────────────────────────────────────────── -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-left" data-reveal="left">
+          <div class="big-year">
+            <span class="big-year-num" data-count="1985">1985</span>
+            <div class="big-year-rule"></div>
+            <span class="big-year-label">When it all began</span>
+          </div>
+          <div class="about-badges">
+            <div class="badge">
+              <span class="badge-main">Band A</span>
+              <span class="badge-sub">Energy Rated</span>
+            </div>
+            <div class="badge">
+              <span class="badge-main">Fully</span>
+              <span class="badge-sub">Insured</span>
+            </div>
+            <div class="badge">
+              <span class="badge-main">Free</span>
+              <span class="badge-sub">Estimates</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-right" data-reveal="right">
+          <span class="section-label">Who We Are</span>
+          <h2 class="section-title">A Dublin family<br><em>built on trust and<br>craftsmanship</em></h2>
+          <p>Founded in 1985 by Pat and Norah Keane, we've grown into one of Dublin's most respected window and door specialists — without ever losing the personal touch that made us who we are.</p>
+          <p>Today, Pat Keane Jnr joins his father in running the business, bringing a second generation of expertise to every home we work in. We serve families across Dublin, Meath, Kildare, and Wicklow — and we treat every home as if it were our own.</p>
+          <a href="#contact" class="btn btn-dark">Talk to Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROBLEMS → SOLUTIONS ───────────────────────────────────── -->
+  <section class="problems" id="problems">
+    <div class="container">
+      <div class="problems-header">
+        <span class="section-label light">The Problems We Fix</span>
+        <h2 class="section-title light">Sound familiar?</h2>
+        <p class="section-intro light">Every home has windows and doors. Not every home has good ones.</p>
+      </div>
+      <div class="problems-grid">
+
+        <div class="problem-card" data-reveal="clip">
+          <div class="pc-problem">
+            <div class="pc-icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M5 35L35 5M5 5l30 30"/>
+                <circle cx="20" cy="20" r="12"/>
+              </svg>
+            </div>
+            <span class="pc-tag">The Problem</span>
+            <h3>Cold Drafts &amp; Heat Loss</h3>
+            <p>Old or poorly fitted windows leak heat constantly — and silently inflate your energy bills every month.</p>
+          </div>
+          <div class="pc-solution">
+            <span class="pc-tag gold">The Solution</span>
+            <h4>Band A uPVC Windows</h4>
+            <p>Our Koblenz uPVC windows achieve a Band A Window Energy Rating. High-performance double or triple glazing with weatherproof seals lock heat inside where it belongs.</p>
+          </div>
+        </div>
+
+        <div class="problem-card" data-reveal="clip">
+          <div class="pc-problem">
+            <div class="pc-icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="8" y="4" width="24" height="32" rx="2"/>
+                <circle cx="28" cy="20" r="2"/>
+              </svg>
+            </div>
+            <span class="pc-tag">The Problem</span>
+            <h3>Tired, Dated Front Doors</h3>
+            <p>Your front door is the first thing the world sees. An old, worn door drags down the entire look of your home.</p>
+          </div>
+          <div class="pc-solution">
+            <span class="pc-tag gold">The Solution</span>
+            <h4>Composite Doors</h4>
+            <p>The most secure, durable and energy-efficient external doors available. Six stunning colour options — White, Oak, Mahogany, Rosewood, Black and Cream — that transform your home instantly.</p>
+          </div>
+        </div>
+
+        <div class="problem-card" data-reveal="clip">
+          <div class="pc-problem">
+            <div class="pc-icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+                <circle cx="20" cy="16" r="8"/>
+                <path d="M20 24v12M14 32h12"/>
+                <path d="M17 14l3 3 5-5"/>
+              </svg>
+            </div>
+            <span class="pc-tag">The Problem</span>
+            <h3>Broken Locks &amp; Stiff Hinges</h3>
+            <p>A window that won't close properly or a lock that won't catch isn't just annoying — it's a security risk you live with every day.</p>
+          </div>
+          <div class="pc-solution">
+            <span class="pc-tag gold">The Solution</span>
+            <h4>The Window Doctor</h4>
+            <p>Our fully qualified Window Doctor fixes uPVC and aluminium windows fast. No callout charge. Free estimates. All work guaranteed. Covering Dublin, Meath, Kildare &amp; Wicklow.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PRODUCTS ───────────────────────────────────────────────── -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="products-header">
+        <span class="section-label">What We Offer</span>
+        <h2 class="section-title">Complete window &amp;<br><em>door solutions</em></h2>
+      </div>
+      <div class="products-grid">
+
+        <article class="prod-card" data-reveal="scale">
+          <span class="prod-num">01</span>
+          <div class="prod-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+              <rect x="4" y="4" width="40" height="40" rx="2"/>
+              <line x1="4" y1="24" x2="44" y2="24"/>
+              <line x1="24" y1="4" x2="24" y2="44"/>
+            </svg>
+          </div>
+          <h3>uPVC Windows</h3>
+          <p>The Koblenz collection — casement, tilt &amp; turn and vertical sliders. Band A energy rated with double or triple glazing to suit any Irish home.</p>
+          <a href="#contact" class="prod-link">Enquire <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="prod-card" data-reveal="scale">
+          <span class="prod-num">02</span>
+          <div class="prod-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+              <rect x="8" y="4" width="32" height="40" rx="2"/>
+              <circle cx="36" cy="24" r="2.5" fill="currentColor"/>
+              <line x1="8" y1="24" x2="40" y2="24"/>
+            </svg>
+          </div>
+          <h3>Composite Doors</h3>
+          <p>The most secure, durable and energy-efficient external doors available — in six stunning colours. Transform your kerb appeal and security in one upgrade.</p>
+          <a href="#contact" class="prod-link">Enquire <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="prod-card" data-reveal="scale">
+          <span class="prod-num">03</span>
+          <div class="prod-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+              <rect x="4" y="4" width="40" height="40" rx="2"/>
+              <line x1="18" y1="4" x2="18" y2="44"/>
+              <line x1="30" y1="4" x2="30" y2="44"/>
+              <circle cx="24" cy="24" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Sliding Sash Windows</h3>
+          <p>Traditional elegance meets modern thermal performance. Maintain the character of period and classic Irish homes while cutting drafts and heat loss.</p>
+          <a href="#contact" class="prod-link">Enquire <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="prod-card" data-reveal="scale">
+          <span class="prod-num">04</span>
+          <div class="prod-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+              <rect x="4" y="4" width="18" height="40" rx="2"/>
+              <rect x="26" y="4" width="18" height="40" rx="2"/>
+              <path d="M22 24h4"/>
+            </svg>
+          </div>
+          <h3>Sliding Patio Doors</h3>
+          <p>Wide, light-flooding sliding door systems designed to connect your living space to your garden. Available in a range of contemporary finishes.</p>
+          <a href="#contact" class="prod-link">Enquire <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="prod-card" data-reveal="scale">
+          <span class="prod-num">05</span>
+          <div class="prod-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+              <rect x="4" y="4" width="40" height="40" rx="2"/>
+              <path d="M4 24h40M24 4v40M14 14h8M26 14h8M14 26h8M26 26h8"/>
+            </svg>
+          </div>
+          <h3>Custom Windows &amp; Doors</h3>
+          <p>Frames made to practically any shape and size in the full colour range — White, Oak and Mahogany. For homes that deserve something unique.</p>
+          <a href="#contact" class="prod-link">Enquire <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="prod-card prod-card--accent" data-reveal="scale">
+          <span class="prod-num">06</span>
+          <div class="prod-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+              <circle cx="24" cy="18" r="10"/>
+              <path d="M24 28v16M18 40h12"/>
+              <path d="M20 16l4 4 6-7"/>
+            </svg>
+          </div>
+          <h3>The Window Doctor</h3>
+          <p>Windows broken, draughty or stiff? Our fully qualified Window Doctor repairs uPVC and aluminium windows across all four counties. <strong>No callout charge.</strong></p>
+          <a href="#contact" class="prod-link">Book a Repair <span aria-hidden="true">→</span></a>
+        </article>
+
+      </div>
+
+      <div class="products-footer">
+        <div class="finance-strip">
+          <span>💳</span>
+          <p><strong>Finance available</strong> — Spread the cost of your new windows or doors with flexible Humm finance. Get started with no upfront payment.</p>
+          <a href="#contact" class="btn btn-dark-sm">Find Out More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STATS ──────────────────────────────────────────────────── -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" data-reveal="fade">
+          <span class="stat-n"><span class="counter" data-target="40">0</span><sup>+</sup></span>
+          <span class="stat-l">Years in Business</span>
+        </div>
+        <div class="stat-item" data-reveal="fade">
+          <span class="stat-n"><span class="counter" data-target="4.7" data-decimals="1">0</span></span>
+          <span class="stat-l">Trustpilot Rating</span>
+        </div>
+        <div class="stat-item" data-reveal="fade">
+          <span class="stat-n"><span class="counter" data-target="31">0</span></span>
+          <span class="stat-l">Verified Reviews</span>
+        </div>
+        <div class="stat-item" data-reveal="fade">
+          <span class="stat-n"><span class="counter" data-target="4">0</span></span>
+          <span class="stat-l">Counties Served</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIALS ───────────────────────────────────────────── -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="testi-header">
+        <span class="section-label">What Our Customers Say</span>
+        <h2 class="section-title">Trusted by Dublin homeowners<br><em>since 1985</em></h2>
+        <div class="tp-badge">
+          <div class="tp-stars">★★★★★</div>
+          <span>4.7 out of 5 &nbsp;·&nbsp; Trustpilot</span>
+        </div>
+      </div>
+      <div class="testi-grid">
+
+        <div class="testi-card" data-reveal="bottom">
+          <div class="testi-quote">"</div>
+          <blockquote>A truly professional organisation. The quality of their products is second to none. I would recommend Keane Windows &amp; Doors without hesitation.</blockquote>
+          <div class="testi-meta">
+            <div class="testi-avatar">JD</div>
+            <div class="testi-info">
+              <strong>John Doyle</strong>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card" data-reveal="bottom">
+          <div class="testi-quote">"</div>
+          <blockquote>The lads were brilliant — windows and doors fitted to perfection. They cleaned and tidied as they went along. Couldn't be happier with the result.</blockquote>
+          <div class="testi-meta">
+            <div class="testi-avatar">JD</div>
+            <div class="testi-info">
+              <strong>Jason Doherty</strong>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card" data-reveal="bottom">
+          <div class="testi-quote">"</div>
+          <blockquote>Really impressed that a company would provide that level of service 6 years after purchasing the windows. That says everything about how they operate.</blockquote>
+          <div class="testi-meta">
+            <div class="testi-avatar">DO</div>
+            <div class="testi-info">
+              <strong>Dermot O'Sullivan</strong>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card" data-reveal="bottom">
+          <div class="testi-quote">"</div>
+          <blockquote>First rate after-sales service. Roger replaced our handles at no charge without us even asking. A company that truly stands behind their work.</blockquote>
+          <div class="testi-meta">
+            <div class="testi-avatar">EO</div>
+            <div class="testi-info">
+              <strong>Eugene O'Hagan</strong>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card" data-reveal="bottom">
+          <div class="testi-quote">"</div>
+          <blockquote>The staff in the showroom were very knowledgeable and courteous. The whole process from quote to installation was smooth and stress-free.</blockquote>
+          <div class="testi-meta">
+            <div class="testi-avatar">MM</div>
+            <div class="testi-info">
+              <strong>Michael Magrath</strong>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card testi-card--cta" data-reveal="bottom">
+          <p>Join hundreds of happy homeowners across Dublin, Meath, Kildare &amp; Wicklow.</p>
+          <a href="#contact" class="btn btn-gold">Get Your Free Quote</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHY KEANE ──────────────────────────────────────────────── -->
+  <section class="why" id="why">
+    <div class="container">
+      <div class="why-inner">
+        <div class="why-left" data-reveal="left">
+          <span class="section-label light">Why Keane?</span>
+          <h2 class="section-title light">The standard we set<br><em>in 1985 hasn't<br>changed</em></h2>
+          <p class="why-intro">Four decades on, we still believe the same thing we did from day one: do the job right, treat people fairly, and stand behind your work — every single time.</p>
+        </div>
+        <ul class="why-list" data-reveal="right">
+          <li class="why-item">
+            <div class="why-tick">✓</div>
+            <div class="why-copy">
+              <strong>No Callout Charge</strong>
+              <p>We come to you at no cost for repair assessments across all four counties.</p>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-tick">✓</div>
+            <div class="why-copy">
+              <strong>Free Estimates</strong>
+              <p>Know exactly what you'll pay before any work begins. No surprises, ever.</p>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-tick">✓</div>
+            <div class="why-copy">
+              <strong>All Work Guaranteed</strong>
+              <p>We stand behind everything we fit and fix. Your peace of mind comes with the job.</p>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-tick">✓</div>
+            <div class="why-copy">
+              <strong>Fully Insured</strong>
+              <p>Complete cover on every job from the moment we arrive to the moment we leave.</p>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-tick">✓</div>
+            <div class="why-copy">
+              <strong>After-Sales for Life</strong>
+              <p>We're still there 6 years after a job. Because our relationship doesn't end at installation.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT / CTA ──────────────────────────────────────────── -->
+  <section class="contact" id="contact">
+    <div class="contact-bg"></div>
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-left" data-reveal="fade">
+          <span class="section-label light">Get in Touch</span>
+          <h2 class="section-title light contact-h">Let's talk<br><em>windows &amp; doors</em></h2>
+          <p class="contact-sub">Call us, drop an email, or visit our Dublin showroom.<br>Free estimates always — no obligation.</p>
+          <div class="contact-details">
+            <a href="tel:016203232" class="contact-item">
+              <div class="ci-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .8 2.9a2 2 0 01-.4 2.1L8.1 9.9a16 16 0 006 6l1.2-1.4a2 2 0 012.1-.4c.9.4 1.9.6 2.9.7a2 2 0 011.7 2.1z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="ci-label">Call Us</span>
+                <span class="ci-value">01 620 3232</span>
+              </div>
+            </a>
+            <a href="mailto:office@keanewindows.ie" class="contact-item">
+              <div class="ci-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <span class="ci-label">Email Us</span>
+                <span class="ci-value">office@keanewindows.ie</span>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="ci-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <span class="ci-label">Showroom</span>
+                <span class="ci-value">Unit 1, Trinity Court<br>Fonthill Industrial Park<br>Dublin 22, D22 E125</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right" data-reveal="fade">
+          <div class="hours-card">
+            <h3>Showroom Hours</h3>
+            <div class="hours-list">
+              <div class="hours-row">
+                <span>Monday – Friday</span>
+                <span class="hours-time">9:00am – 5:00pm</span>
+              </div>
+              <div class="hours-row">
+                <span>Saturday</span>
+                <span class="hours-time">10:00am – 4:00pm</span>
+              </div>
+              <div class="hours-row">
+                <span>Sunday</span>
+                <span class="hours-time">12:00pm – 4:00pm</span>
+              </div>
+            </div>
+            <div class="serving-area">
+              <span class="serving-label">Serving</span>
+              <div class="counties">
+                <span>Dublin</span>
+                <span>Meath</span>
+                <span>Kildare</span>
+                <span>Wicklow</span>
+              </div>
+            </div>
+          </div>
+          <a href="tel:016203232" class="cta-call-btn">
+            Call Now — 01 620 3232
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-k">KEANE</span>
+            <span class="logo-wd">WINDOWS &amp; DOORS</span>
+          </div>
+          <p>A Dublin family business since 1985.<br>Serving Dublin, Meath, Kildare &amp; Wicklow.</p>
+        </div>
+        <nav class="footer-nav">
+          <a href="#about">About</a>
+          <a href="#products">Products</a>
+          <a href="#why">Why Keane</a>
+          <a href="#testimonials">Reviews</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="footer-contact">
+          <a href="tel:016203232">01 620 3232</a>
+          <a href="mailto:office@keanewindows.ie">office@keanewindows.ie</a>
+          <span>Unit 1, Trinity Court, Fonthill Industrial Park, Dublin 22</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Keane Windows &amp; Doors Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
