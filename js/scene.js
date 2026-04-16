@@ -47,13 +47,13 @@ export function initScene() {
   const ambientLight = new THREE.AmbientLight(0x1a2040, 1.5);
   scene.add(ambientLight);
 
-  // Warm gold light (simulates sunlight through glass)
-  goldLight = new THREE.PointLight(0xc9a060, 12, 18);
+  // Warm brand-red light (sunlight through glass)
+  goldLight = new THREE.PointLight(0xd43015, 10, 18);
   goldLight.position.set(4, 3, 4);
   scene.add(goldLight);
 
   // Cool blue accent
-  blueLight = new THREE.PointLight(0x4060c8, 6, 16);
+  blueLight = new THREE.PointLight(0x3060c8, 5, 16);
   blueLight.position.set(-5, -2, 2);
   scene.add(blueLight);
 
@@ -88,9 +88,9 @@ function buildPanes() {
   ];
 
   const edgeMat = new THREE.LineBasicMaterial({
-    color: 0xc9a060,
+    color: 0xffffff,
     transparent: true,
-    opacity: 0.22,
+    opacity: 0.18,
   });
 
   paneData.forEach((d, i) => {
@@ -116,9 +116,9 @@ function buildPanes() {
 
     // Cross dividers (window pane look)
     const crossMat = new THREE.LineBasicMaterial({
-      color: 0xc9a060,
+      color: 0xffffff,
       transparent: true,
-      opacity: 0.14,
+      opacity: 0.10,
     });
     const crossPoints = [
       new THREE.Vector3(-d.w / 2, 0, 0.001),
@@ -126,18 +126,12 @@ function buildPanes() {
       new THREE.Vector3(0, -d.h / 2, 0.001),
       new THREE.Vector3(0,  d.h / 2, 0.001),
     ];
-    const crossGeo = new THREE.BufferGeometry().setFromPoints(crossPoints);
-    // Use LineSegments manually
     const crossLine = new THREE.LineSegments(
-      new THREE.BufferGeometry().setFromPoints([
-        crossPoints[0], crossPoints[1],
-      ]),
+      new THREE.BufferGeometry().setFromPoints([crossPoints[0], crossPoints[1]]),
       crossMat
     );
     const crossLine2 = new THREE.LineSegments(
-      new THREE.BufferGeometry().setFromPoints([
-        crossPoints[2], crossPoints[3],
-      ]),
+      new THREE.BufferGeometry().setFromPoints([crossPoints[2], crossPoints[3]]),
       crossMat.clone()
     );
     mesh.add(crossLine);
@@ -173,10 +167,10 @@ function buildParticles() {
   geo.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
 
   const mat = new THREE.PointsMaterial({
-    color: 0xc9a060,
-    size: 0.035,
+    color: 0xffffff,
+    size: 0.03,
     transparent: true,
-    opacity: 0.55,
+    opacity: 0.35,
     sizeAttenuation: true,
   });
 

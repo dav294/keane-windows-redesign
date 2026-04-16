@@ -118,15 +118,28 @@ revealOnScroll('[data-reveal="left"]',  { duration: 1.1 });
 revealOnScroll('[data-reveal="right"]', { duration: 1.1 });
 
 /* ── Problems — clip-path reveal ─────────────────────────────── */
+// GSAP owns the clip-path entirely (no CSS clip-path on .problem-card).
+// gsap.set below establishes the hidden state immediately so there's no flash.
+// fromTo ensures GSAP knows the exact start value and won't misread computed styles.
+// On complete we set clipPath:'none' explicitly so the card stays visible.
+gsap.set('.problem-card', { clipPath: 'inset(0 0 100% 0)' });
+
 document.querySelectorAll('.problem-card').forEach((card, i) => {
-  gsap.to(card, {
-    scrollTrigger: { trigger: card, start: 'top 88%', once: true },
-    clipPath: 'inset(0 0 0% 0)',
-    duration: 1.0,
-    ease: 'expo.out',
-    delay: i * 0.12,
-    onComplete() { gsap.set(card, { clearProps: 'clipPath' }); },
-  });
+  gsap.fromTo(card,
+    { clipPath: 'inset(0 0 100% 0)' },
+    {
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 86%',
+        once: true,
+      },
+      clipPath: 'inset(0 0 0% 0)',
+      duration: 1.0,
+      ease: 'expo.out',
+      delay: i * 0.15,
+      onComplete() { gsap.set(card, { clipPath: 'none' }); },
+    }
+  );
 });
 
 /* ── Products — scale up stagger ─────────────────────────────── */
