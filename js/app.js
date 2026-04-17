@@ -76,8 +76,7 @@ heroTL
   .to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.9, ease: 'expo.out' }, 0.1)
   .to('.hero-sub',     { opacity: 1, y: 0, duration: 0.9, ease: 'expo.out' }, 0.45)
   .to('.hero-actions', { opacity: 1, y: 0, duration: 0.9, ease: 'expo.out' }, 0.6)
-  .to('.hero-trust',   { opacity: 1, y: 0, duration: 0.9, ease: 'expo.out' }, 0.72)
-  .to('.scroll-cue',   { opacity: 1,        duration: 1.2, ease: 'expo.out' }, 0.9);
+  .to('.hero-trust',   { opacity: 1, y: 0, duration: 0.9, ease: 'expo.out' }, 0.72);
 
 /* ── Section Reveal Helper ────────────────────────────────────── */
 // After revealing, we remove the data-reveal attribute and clear GSAP inline
@@ -222,21 +221,6 @@ ScrollTrigger.create({
 /* ── Contact — fade in sections ──────────────────────────────── */
 // Already handled by [data-reveal="fade"] above
 
-/* ── Finance strip reveal ────────────────────────────────────── */
-gsap.set('.finance-strip', { opacity: 0, y: 20 });
-ScrollTrigger.create({
-  trigger: '.finance-strip',
-  start: 'top 90%',
-  once: true,
-  onEnter: () => {
-    gsap.to('.finance-strip', {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: 'expo.out',
-    });
-  },
-});
 
 /* ── Smooth nav anchor links ──────────────────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
