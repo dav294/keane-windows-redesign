@@ -719,9 +719,9 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   background: var(--accent);
   border-color: var(--accent);
 }
-.prod-card--accent h3 { color: #fff; }
-.prod-card--accent p { color: rgba(255,255,255,0.95); }
-.prod-card--accent p strong { color: #fff; font-weight: 700; }
+.prod-card.prod-card--accent h3 { color: #fff; }
+.prod-card.prod-card--accent p { color: #fff; }
+.prod-card.prod-card--accent p strong { color: #fff; font-weight: 700; }
 .prod-card--accent .prod-num { color: rgba(255,255,255,0.4); }
 .prod-card--accent .prod-icon svg { color: rgba(255,255,255,0.85); }
 .prod-card--accent .prod-link { color: #fff; }
