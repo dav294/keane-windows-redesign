@@ -30,7 +30,7 @@
   --border-dk: rgba(255,255,255,0.08);
 
   /* Typography */
-  --font-h: 'Cormorant Garamond', Georgia, serif;
+  --font-h: 'Raleway', system-ui, sans-serif;
   --font-b: 'Outfit', system-ui, sans-serif;
 
   /* Easing */
@@ -86,19 +86,19 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 
 .section-title {
   font-family: var(--font-h);
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
-  font-weight: 400;
-  line-height: 1.12;
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.15;
   color: var(--text);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 .section-title em {
-  font-style: italic;
+  font-style: normal;
   color: var(--accent);
-  font-weight: 300;
+  font-weight: 700;
 }
 .section-title.light { color: #fff; }
-.section-title.light em { color: rgba(255,255,255,0.7); }
+.section-title.light em { color: rgba(255,255,255,0.75); }
 
 /* ── Buttons ─────────────────────────────────────────────────── */
 .btn {
@@ -110,7 +110,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   font-weight: 500;
   letter-spacing: 0.04em;
   padding: 14px 32px;
-  border-radius: 2px;
+  border-radius: 15px;
   transition: all 0.3s var(--ease-out);
   cursor: pointer;
 }
@@ -156,7 +156,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   padding: 10px 22px;
   background: var(--accent);
   color: #fff;
-  border-radius: 2px;
+  border-radius: 15px;
   white-space: nowrap;
   transition: background 0.25s;
 }
@@ -196,15 +196,17 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   justify-content: space-between;
   gap: 24px;
 }
-.nav-logo { display: flex; align-items: center; }
-.nav-logo-img {
-  height: 44px;
-  width: auto;
-  /* Fallback white bg treatment for dark hero */
-  filter: brightness(0) invert(1);
-  transition: filter 0.4s;
+.nav-logo {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 7px 12px;
+  border-radius: 10px;
 }
-.nav.scrolled .nav-logo-img { filter: none; }
+.nav-logo-img {
+  height: 36px;
+  width: auto;
+}
 
 .nav-links {
   display: flex;
@@ -298,11 +300,15 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 640px;
+  min-height: 580px;
   display: flex;
   align-items: center;
   overflow: hidden;
   background: var(--bg-dark);
+  /* Offset for fixed nav so content never hides behind it */
+  padding-top: 80px;
+  padding-bottom: 40px;
+  box-sizing: border-box;
 }
 .hero-bg-img {
   position: absolute;
@@ -333,13 +339,12 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   width: 92%;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 80px;
 }
 .hero-eyebrow {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
   opacity: 0;
   transform: translateY(12px);
 }
@@ -358,15 +363,15 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 }
 .hero-title {
   font-family: var(--font-h);
-  font-size: clamp(3.8rem, 8.5vw, 9rem);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.6rem, 5.5vw, 6.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   color: #fff;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.05em;
+  gap: 0.02em;
 }
 .ht-line {
   display: block;
@@ -374,17 +379,17 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 }
 .ht-line > span { display: block; }
 .ht-italic {
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: rgba(255,255,255,0.45);
   display: block;
 }
 .hero-sub {
-  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
   font-weight: 300;
   color: rgba(255,255,255,0.6);
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
+  line-height: 1.75;
+  margin-bottom: 1.8rem;
   max-width: 520px;
   opacity: 0;
   transform: translateY(12px);
@@ -392,8 +397,8 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-bottom: 3rem;
+  gap: 12px;
+  margin-bottom: 2rem;
   opacity: 0;
   transform: translateY(12px);
 }
@@ -616,13 +621,17 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 .problems-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
   gap: 2px;
 }
 .problem-card {
-  display: flex;
-  flex-direction: column;
+  /* Span 2 rows and use subgrid so all pc-problem cells share one row height
+     and all pc-solution cells share another — guaranteeing equal size */
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
   overflow: hidden;
-  /* Initial state set by GSAP in app.js to avoid clearProps conflict */
+  /* Initial clip-path state set by GSAP in app.js */
 }
 .pc-problem {
   padding: 40px 32px;
@@ -632,7 +641,6 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
   display: flex;
   flex-direction: column;
   gap: 14px;
-  flex: 1;
 }
 .pc-icon svg {
   width: 40px;
@@ -1254,7 +1262,8 @@ button { background: none; border: none; cursor: pointer; font: inherit; }
 /* ── RESPONSIVE ───────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .story-inner    { grid-template-columns: 1fr; gap: 48px; }
-  .problems-grid  { grid-template-columns: 1fr; gap: 2px; }
+  .problems-grid  { grid-template-columns: 1fr; grid-template-rows: unset; gap: 2px; }
+  .problem-card   { grid-row: unset; grid-template-rows: unset; display: flex; flex-direction: column; }
   .products-grid  { grid-template-columns: repeat(2, 1fr); }
   .about-cards    { grid-template-columns: repeat(2, 1fr); }
   .testi-grid     { grid-template-columns: repeat(2, 1fr); }
